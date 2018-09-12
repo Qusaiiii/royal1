@@ -193,36 +193,42 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`🎶 جار بدأ: **${song.title}**`);
 }
 
- client.on('message', message => {
-     if (message.content === prefix +"help") {
-    const embed = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .addField(`**__أوامر البوت__**`,`
-     **${prefix}play**
-   امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-     **${prefix}stop**
-        ايقاف الاغنية 
-     **${prefix}skip**     
-     امر تخطي الاغنية
-     **${prefix}queue**
-       قائمة الانتظار
-     **${prefix}np**
-        الاغنية الحالية
-     **${prefix}volume**
-    تغير مستوى الصوت 1 - 100
-     **${prefix}pause**
-      ايقاف الاغنية مؤقتا 
-     **${prefix}resume**
-       امر تكملة الاغنية
-     **${prefix}move**
-   سحب البوت او ادخال البوت الى روم
-   
-     prefix = ${prefix}
-     ping = ${Date.now() - message.createdTimestamp}`)
+  client.on('message', message => {//help msg
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+      message.react("☑")            
 
-      message.channel.send({embed});
-     }
-    });
+   
+
+
+      message.author.sendMessage(`
+
+     __**اوامر البوت**__
+
+**${prefix}play**
+امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
+**${prefix}stop**
+ايقاف الاغنية 
+**${prefix}skip**     
+امر تخطي الاغنية
+**${prefix}queue**
+قائمة الانتظار
+**${prefix}np**
+الاغنية الحالية
+**${prefix}volume**
+تغير مستوى الصوت 1 - 100
+**${prefix}pause**
+ايقاف الاغنية مؤقتا 
+**${prefix}resume**
+امر تكملة الاغنية
+   
+     prefix = **${prefix}**
+     ping = **${Date.now() - message.createdTimestamp}**
+
+`);
+
+}
+});
 	
 
 client.on('message', message => {

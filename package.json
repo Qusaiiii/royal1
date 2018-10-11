@@ -10,6 +10,7 @@
    "discord.js": "^11.3.2",
     "discord.js-musicbot-addon": "^1.10.3",
     "fs": "^0.0.2",
+    "node-opus": "^0.3.0",
     "get-youtube-id": "^1.0.0",
     "youtube-info": "^1.2.0",
     "ytdl-core": "^0.20.2",

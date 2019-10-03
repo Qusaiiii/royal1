@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const HypixelAPI = require('hypixel-api')
 const moment = require('moment')
-
+const prefix = '!';
 
 const createRichEmbed = (title, description, color, image, footer, thumb) => {
 	let genEmbed = new Discord.RichEmbed({

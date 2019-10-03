@@ -17,11 +17,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
- if (msg.channel.send(`this is an emoji ${emoji}`);
-    msg.channel.send('Pong!');
-  }
-});
 const prefix = "!"
 
 

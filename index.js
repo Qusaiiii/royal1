@@ -27,7 +27,7 @@ const createRichEmbed = (title, description, color, image, footer, thumb) => {
 }
 
 const client = new Discord.Client()
-const HypixelClient = new HypixelAPI(args[1])
+const HypixelClient = new HypixelAPI(args[0])
 
 client.on('ready', () => {
 
@@ -226,4 +226,4 @@ if (message.content.startsWith(prefix + 'setplay')) {
 
 });
 
-client.login(args[0]) 
+client.login(process.env.BOT_TOKEN) 

@@ -2,12 +2,6 @@ const Discord = require('discord.js')
 const HypixelAPI = require('hypixel-api')
 const moment = require('moment')
 
-const args = process.argv.slice(1)
-
-if (args.length < 1) {
-	console.log('Usage: node index.js <Discord bot token> <Hypixel API key>')
-	process.exit(0)
-}
 
 const createRichEmbed = (title, description, color, image, footer, thumb) => {
 	let genEmbed = new Discord.RichEmbed({
@@ -27,7 +21,7 @@ const createRichEmbed = (title, description, color, image, footer, thumb) => {
 }
 
 const client = new Discord.Client()
-const HypixelClient = new HypixelAPI(args[0])
+const HypixelClient = new HypixelAPI('7c62dbec-f638-4799-bbac-2a31c1c4fe17')
 
 client.on('ready', () => {
 
@@ -175,7 +169,7 @@ client.on('message', async (message) => {
 	}
 })
 
-client.login(process.env.BOT_TOKEN)
+
 
 
 
@@ -226,4 +220,4 @@ if (message.content.startsWith(prefix + 'setplay')) {
 
 });
 
-client.login(process.env.BOT_TOKEN) 
+client.login(process.env.BOT_TOKEN)

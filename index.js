@@ -2,9 +2,9 @@ const Discord = require('discord.js')
 const HypixelAPI = require('hypixel-api')
 const moment = require('moment')
 
-const args = process.argv.slice(2)
+const args = process.argv.slice(1)
 
-if (args.length < 2) {
+if (args.length < 1) {
 	console.log('Usage: node index.js <Discord bot token> <Hypixel API key>')
 	process.exit(0)
 }
